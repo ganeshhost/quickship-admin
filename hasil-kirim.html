@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <title>Daftar Pesan Masuk</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #0d0d0d;
+        color: #ffffff;
+        font-family: "Orbitron", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        padding: 40px 20px;
+        box-sizing: border-box;
+      }
+
+      h2 {
+        color: #ffffff;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px #f2f2f2;
+      }
+
+      button {
+        background-color: #ff0033;
+        color: #fff;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 0 10px #ff0033;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+
+      button:hover {
+        background-color: #cc0029;
+        transform: scale(1.05);
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 30px;
+        width: 100%;
+        max-width: 600px;
+        background: #1a1a1a;
+        border-radius: 10px;
+        box-shadow: 0 0 20px #262626;
+        overflow: hidden;
+      }
+
+      li {
+        padding: 15px 20px;
+        border-bottom: 1px solid #333;
+        font-size: 16px;
+        color: #ffffff;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+
+      li:hover {
+        background-color: #262626;
+      }
+      @media (max-width: 390px) {
+        nav {
+          padding: 7px 1rem;
+        }
+
+        nav ul li a {
+          font-size: 14px;
+          padding: 6px 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Pesan yang Diterima:</h2>
+
+    <button onclick="hapusSemua()">Hapus Semua Pesan</button>
+
+    <ul id="daftar"></ul>
+
+    <script>
+      const daftarPesan = JSON.parse(
+        localStorage.getItem("pesanTersimpan") || "[]"
+      );
+      const ul = document.getElementById("daftar");
+
+      if (daftarPesan.length === 0) {
+        ul.innerHTML = "<li>Belum ada pesan masuk.</li>";
+      } else {
+        daftarPesan.forEach((pesan) => {
+          const li = document.createElement("li");
+          li.textContent = pesan;
+          ul.appendChild(li);
+        });
+      }
+
+      function hapusSemua() {
+        if (confirm("Apakah Anda yakin ingin menghapus semua pesan?")) {
+          localStorage.removeItem("pesanTersimpan");
+          location.reload();
+        }
+      }
+    </script>
+  </body>
+</html>
