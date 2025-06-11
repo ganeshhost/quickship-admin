@@ -1,0 +1,248 @@
+* html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(21, 21, 21);
+}
+
+nav {
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-style: bold;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  padding: 5px 3px;
+  transition: all;
+  transition-duration: 300ms;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+nav ul li a:hover {
+  color: purple;
+}
+
+.firstname {
+  color: rgb(255, 255, 255);
+}
+
+header {
+  background-image: url("pexels-fauxels-3183197.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.header-opacity {
+  background-color: #222;
+  height: 100%;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.text-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 45%;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+/* Kalimat pemuka */
+.kalimat-pemuka {
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.nav-input {
+  padding: 15px 50px;
+  background-color: #007bff;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  width: auto; /* Mengatur lebar otomatis agar sesuai dengan konten */
+  max-width: 300px; /* Maksimal lebar input */
+  margin: 0 auto; /* Agar input berada di tengah */
+}
+
+.nav-input:hover {
+  background-color: #0056b3;
+}
+
+/* Tambahan untuk halaman supaya tampilan input terjaga */
+.page-content {
+  display: none;
+  margin: 60px auto;
+  text-align: center;
+  max-width: 800px;
+  background-color: #2e2e2e;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.page-content.active {
+  display: block;
+}
+
+/* Container untuk teks dan tombol */
+.intro-container {
+  display: flex; /* Flexbox untuk letak berdampingan */
+  align-items: center; /* Vertikal center */
+  justify-content: start; /* Letakkan di awal (kiri) */
+  gap: 10px; /* Jarak antara teks dan tombol */
+  margin: 20px 0; /* Margin atas dan bawah */
+}
+
+/* Gaya untuk teks kalimat pembuka */
+.intro-text {
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+}
+
+/* Gaya untuk tombol */
+.intro-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+/* Efek hover untuk tombol */
+.intro-btn:hover {
+  background-color: #0056b3;
+}
+
+.intro-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  max-width: 700px;
+  margin: auto;
+}
+
+.intro-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #e0e0e0;
+}
+
+.intro-btn {
+  padding: 12px 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.intro-btn:hover {
+  background-color: #0056b3;
+}
+
+.input-wrapper {
+  position: relative;
+  flex-grow: 1;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none;
+}
+
+.intro-text.with-icon {
+  padding-left: 30px;
+}
+
+.intro-title {
+  color: #fff;
+}
+
+@media (max-width: 390px) {
+  nav {
+    padding: 7px 1rem;
+  }
+
+  nav ul li a {
+    font-size: 15px;
+    padding: 6px 8px;
+  }
+
+  .intro-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .text-button-wrapper {
+    width: 100%;
+  }
+
+  .intro-text {
+    font-size: 14px;
+  }
+
+  .intro-btn {
+    font-size: 14px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-style: bold;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    padding: 5px 8px;
+    transition: all;
+    transition-duration: 300ms;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
